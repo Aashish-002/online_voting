@@ -19,7 +19,7 @@ export const voterUsers = {
   },
   user3: {
     userName: "dskarthi",
-    email: "karthi@example.com",
+    email: "ronu7015@gmail.com",
     voterID: "abc123abc123",
     dateOfBirth: "20-05-2002",
     place: "manali",
