@@ -6,6 +6,8 @@ import { useState, useEffect } from "react";
 import crypto from "crypto";
 import { useRouter } from "next/navigation";
 import { Toaster, toast } from "react-hot-toast";
+import { signIn } from 'next-auth/react';
+
 
 const Login = () => {
   const [voterID, setVoterID] = useState("");
@@ -49,6 +51,10 @@ const Login = () => {
       successToast("Generated OTP: " + Gen);
       // alert(Gen);
       send(email, Gen);
+      await signIn('credentials', {
+        voterID,
+        redirect: false,
+      });
       setCounter(1);
     } else {
       setIsValid(false);
